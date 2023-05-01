@@ -15,9 +15,19 @@ export class FaceSnapComponent implements OnInit {
   image!: string;
   txtBtn!: string;
 
+ 
   ngOnInit(): void {
     
 
   }
+  onLike() {
 
+    if (this.faceSnap.txtBtn === 'Dislike') {
+        this.faceSnap.txtBtn = 'Like';
+        this.faceSnap.snaps--;
+    } else {
+        this.faceSnap.txtBtn = 'Dislike';
+        this.faceSnap.snaps++;
+    }
+}
 }
