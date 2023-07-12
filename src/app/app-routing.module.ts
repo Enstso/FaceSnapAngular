@@ -1,7 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { FaceSnapListComponent } from "./face-snap-list/face-snap-list.component";
-import { BrowserModule } from "@angular/platform-browser";
 import { LandingPageComponentComponent } from "./landing-page-component/landing-page-component.component";
 
 const routes: Routes = [
@@ -28,5 +27,5 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule {
-    
+
 }

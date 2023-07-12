@@ -4,3 +4,23 @@ header {
     margin-bottom: 20px;
     padding: 10px;
 }
+
+a {
+    margin: 10px;
+    font-size:  22px; 
+    color: #333;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+}
+  
+.active {
+    color: #666;
+    text-decoration: underline;
+}
+
+button{
+    padding: 10px;
+    background-color: black;
+}
