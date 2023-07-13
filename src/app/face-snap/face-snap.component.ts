@@ -1,37 +1,29 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FaceSnap } from '../models/face-snap.model';
-import { FaceSnapsService } from '../services/face-snaps.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-face-snap',
   templateUrl: './face-snap.component.html',
   styleUrls: ['./face-snap.component.scss']
 })
+
 export class FaceSnapComponent implements OnInit {
   @Input() faceSnap!: FaceSnap;
-  id!: number;
-  title!: string;
-  description!: string;
-  date!: Date;
-  snaps!: number;
-  image!: string;
-  txtBtn!: string;
-
-  constructor(private faceSnapService : FaceSnapsService){
+  
+  
+  constructor( private router: Router) {
 
   }
- 
+
   ngOnInit(): void {
     
 
   }
-  onLike() {
 
-    if (this.faceSnap.txtBtn === 'Dislike') {
-        this.faceSnap.txtBtn = 'Like';
-        this.faceSnap.snaps--;
-    } else {
-        this.faceSnap.txtBtn = 'Dislike';
-        this.faceSnapService.snapById(this.faceSnap.id);
-    }
+  onView(){
+    this.router.navigateByUrl('facesnaps/'+this.faceSnap.id);
+  }
+  
+  
 }
-}
+
